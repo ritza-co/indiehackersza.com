@@ -2,10 +2,21 @@
 <html lang="en">
     <head>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+        <script src="assets/list.min.js"></script>
+        <script type="application/javascript">
+            function init() {
+                var options = {
+                  valueNames: [ 'name' , 'description' ]
+                };
+
+                var personList = new List('person-list', options);
+            }
+        </script>
+
         <title>IndieHackers ZA</title>
     </head>
 
-<body>
+<body onload="init();">
 
 <h1>IndieHackers ZA</h1>
 

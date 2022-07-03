@@ -65,13 +65,19 @@ for pp in peopleprojectsdata:
     projects[project_id]['people'].append((people[person_id]['name'], person_link))
 
 # generate people HTML
-print("<h2>People</h2>")
+print("<h2>People &amp; Projects</h2>")
+print('<div id="person-list">')
+print('<input class="search" />')
+print("<h3>People</h3>")
+print('<ul class="list">')
+
 for p in people:
     person = people[p]
     pprojects = person['projects']
     
     htmlprojects = ' &middot; '.join([f"""<a href="{p[1]}">{p[0]}</a>""" for p in pprojects])
-    print(f"<h3>{person['name']}</h3>")
+    print("<li>")
+    print(f"""<h4 class="name">{person['name']}</h4>""")
     print("<ul>")
     print(f"""<li><b>Website: </b> <a href="{person['website']}">{person['website']}</a></li>""")
     print(f"""<li><b>Twitter: </b> <a href="{person['twitter']}">{person['twitter']}</a></li>""")
@@ -79,17 +85,18 @@ for p in people:
     print(f"""<li><b>GitHub: </b> <a href="{person['github']}">{person['github']}</a></li>""")
     print(f"""<li><b>Projects: </b> {htmlprojects}</li>""")
     print("</ul>")
+    print("</li>")
 
-
-
+print("<h3>Projects</h3>")
 # generate projects HTML
-print("<h2>Projects</h2>")
 for p in projects:
     project = projects[p]
     ppeople = project['people']
     
     htmlpeople= ' &middot; '.join([f"""<a href="{p[1]}">{p[0]}</a>""" for p in ppeople])
-    print(f"<h3>{project['name']}</h3>")
+    print("<li>")
+    print(f"""<h4 class="name">{project['name']}</h4>""")
+    print(f"""<p class="description">{project['description']}</p>""")
     print("<ul>")
     print(f"""<li><b>Website: </b> <a href="{project['website']}">{project['website']}</a></li>""")
     print(f"""<li><b>Twitter: </b> <a href="{project['twitter']}">{project['twitter']}</a></li>""")
@@ -97,6 +104,7 @@ for p in projects:
     print(f"""<li><b>GitHub: </b> <a href="{project['github']}">{project['github']}</a></li>""")
     print(f"""<li><b>People: </b> {htmlpeople}</li>""")
     print("</ul>")
+    print("</li>")
 
 
 print("</body>")
