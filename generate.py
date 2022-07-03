@@ -67,7 +67,7 @@ for pp in peopleprojectsdata:
 # generate people HTML
 print("<h2>People &amp; Projects</h2>")
 print('<div id="person-list">')
-print('<input class="search" />')
+print('<input class="search" placeholder="Search people and projects" />')
 print("<h3>People</h3>")
 print('<ul class="list">')
 
