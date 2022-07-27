@@ -37,7 +37,7 @@ peopledata = read_csv(people_url)
 next(peopledata)
 people = {}
 for person in peopledata:
-    id, name, website, twitter, linkedin, github = person
+    id, name, website, twitter, linkedin, github, imgurl = person
     people[id] = {
         "id": id,
         "name": name,
@@ -45,6 +45,7 @@ for person in peopledata:
         "twitter": twitter,
         "linkedin": linkedin,
         "github": github,
+        "imgurl": imgurl,
         "projects": []
     }
 
@@ -73,10 +74,11 @@ print('<ul class="list">')
 for p in people:
     person = people[p]
     pprojects = person['projects']
+    imgurl = person['imgurl']
     
     htmlprojects = ' &middot; '.join([f"""<a href="{p[1]}">{p[0]}</a>""" for p in pprojects])
     print("<li class='card card-person'>")
-    print("<div class='photo'><img src='./assets/temp-person.png'  /></div>")
+    print(f"<div class='photo'><img src='{imgurl}'  /></div>")
     print(f"""<h4 class="name"><span class='first'>{person['name'].split(' ', 1)[0]}</span> <span class='last'>{person['name'].split(' ', 1)[1]}</span></h4>""")
     print("<ul>")
     if person['website']:
@@ -122,7 +124,7 @@ for p in projects:
 print("</ul><!-- /list -->")
 print("</div>")
 
-print("<footer class='text-center text-white text-opacity-40'>Built by Gareth. Made pretty by <a href='https://twitter.com/iaremarkus' rel='noopener noreferrer' target='_blank' class='hover:underline hover:text-white transition'>Markus</a></footer>")
+print("<footer class='text-center text-white text-opacity-40'>Made pretty by <a href='https://twitter.com/iaremarkus' rel='noopener noreferrer' target='_blank' class='hover:underline hover:text-white transition'>Markus</a></footer>")
 print("</body>")
 print("</html>")
 
