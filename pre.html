@@ -1,31 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
-        <script src="assets/list.min.js"></script>
-        <script type="application/javascript">
-            function init() {
-                var options = {
-                  valueNames: [ 'name' , 'description' ]
-                };
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-                var personList = new List('person-list', options);
-            }
-        </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./assets/list.min.js"></script>
+    <script type="application/javascript">
+      function init() {
+        var options = {
+          valueNames: ["name", "description"],
+        };
 
-        <title>IndieHackers ZA</title>
-    </head>
+        var personList = new List("person-list", options);
+      }
+    </script>
 
-<body onload="init();">
+    <link rel="stylesheet" href="./assets/styles.css" />
 
-<h1>IndieHackers ZA</h1>
+    <title>IndieHackers ZA</title>
+  </head>
 
-<p><a href="https://indiehackers.com">Indie Hackers</a> is a community of makers working together to build profitable online businesses. Learn from fellow makers and connect with others who are starting and growing their own companies. We currently have an active chapter in Cape Town meeting once per month, and plan to soon expand to Johannesburg.</p>
+  <body onload="init();" class="p-4 md:p-10 lg:p-20 gapped">
+    <div class="shadow-2xl">
+      <div class="hero gapped gapped-small bg-white p-6 lg:p-10">
+        <h1 class="text-black">IndieHackers<span>ZA</span></h1>
 
-<h2>Find us around the Internet</h2>
-<ul>
-    <li><a href="https://www.meetup.com/Indie-Hackers-Cape-Town/">IndieHackers CPT on Meetup.com</a></li>
-    <li><code>#indiehackerscpt</code> on <a href="https://zatech.co.za">ZATech</a></li>
-    <li><code>#founderfridays</code> on <a href="https://codecapsules.io/slack">the Code Capsules Slack</a></li>
-</ul>
+        <p class="text-black text-xl md:text-2xl">
+          <a href="https://indiehackers.com">Indie Hackers</a> is a community of
+          makers working together to build profitable online businesses. Learn
+          from fellow makers and connect with others who are starting and
+          growing their own companies. We currently have an active chapter in
+          Cape Town meeting once per month, and plan to soon expand to
+          Johannesburg.
+        </p>
+      </div>
 
+      <div
+        class="findus gapped gapped-small bg-black bg-opacity-30 p-6 lg:p-10"
+      >
+        <h2 class="text-xl md:text-2xl lg:text-4xl">
+          Find us around the Internet
+        </h2>
+        <ul>
+          <li class="mb-2 text-xl md:text-2xl">
+            <a href="https://www.meetup.com/Indie-Hackers-Cape-Town/"
+              >IndieHackers CPT on Meetup.com</a
+            >
+          </li>
+          <li class="mb-2 text-xl md:text-2xl">
+            <code>#indiehackerscpt</code> on
+            <a href="https://zatech.co.za">ZATech</a>
+          </li>
+          <li class="mb-2 text-xl md:text-2xl">
+            <code>#founderfridays</code> on
+            <a href="https://codecapsules.io/slack">the Code Capsules Slack</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
