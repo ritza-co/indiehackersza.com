@@ -124,7 +124,7 @@ for p in projects:
 print("</ul><!-- /list -->")
 print("</div>")
 
-print("<footer class='text-center text-white text-opacity-40'>Made pretty by <a href='https://twitter.com/iaremarkus' rel='noopener noreferrer' target='_blank' class='hover:underline hover:text-white transition'>Markus</a></footer>")
+print("<footer class='text-center text-white text-opacity-40'>Made pretty by <a href='https://iaremark.us' rel='noopener noreferrer' target='_blank' class='hover:underline hover:text-white transition'>Markus</a></footer>")
 print("</body>")
 print("</html>")
 
